@@ -89,48 +89,74 @@ kodok.jump() // "hop hop"
 
 
 
+// console.log("============================================================================") 
+// console.log("=================================Soal 2=====================================")
+// console.log("============================================================================")
+
+// class Clock {
+//     constructor({template}) {
+//         this._template = template;
+//         this._timer;
+//     }
+
+//     render(temp) {
+//         var date = new Date();
+        
+//         var hours = date.getHours();
+//         if (hours < 10) hours = '0' + hours;
+  
+//         var mins = date.getMinutes();
+//         if (mins < 10) mins = '0' + mins;
+  
+//         var secs = date.getSeconds();
+//         if (secs < 10) secs = '0' + secs;
+
+//         var output = temp
+//         .replace('h', hours)
+//         .replace('m', mins)
+//         .replace('s', secs);
+  
+//         console.log(output);
+//     }
+
+//     stop(){
+//         clearInterval(this._timer);
+//     }
+
+//     start(){
+//         this.render(this._template);
+//         this._timer = setInterval(this.render, 1000, this._template);
+//     }
+
+// }
+
+// var clock = new Clock({template: 'h:m:s'});
+// clock.start();
+
+
 console.log("============================================================================") 
-console.log("=================================Soal 2=====================================")
+console.log("=================================Soal 3=====================================")
 console.log("============================================================================")
 
-class Clock {
-    constructor({template}) {
-        this._template = template;
-        this._timer;
-    }
+//function wait(){ doSomething() .then(result =>{console.log(result)}); .catch(error=>{console.log('error')}) }
 
-    render(temp) {
-        var date = new Date();
-        
-        var hours = date.getHours();
-        if (hours < 10) hours = '0' + hours;
-  
-        var mins = date.getMinutes();
-        if (mins < 10) mins = '0' + mins;
-  
-        var secs = date.getSeconds();
-        if (secs < 10) secs = '0' + secs;
+//function wait(){ doSomething() .catch(error =>{console.log}) .then(result=>{console.log(result);}); }
 
-        var output = temp
-        .replace('h', hours)
-        .replace('m', mins)
-        .replace('s', secs);
-  
-        console.log(output);
-    }
+//function wait(){ doSomething().then(result=>{try{console.log(result); }catch(error){console.log('error'); } }); }
+// async function wait() {
+//     try {
+//         const result = await doSomething();
+//         console.log(result);
+//     } catch(error) {
+//         console.log('Error ');
+//     }
+// }
 
-    stop(){
-        clearInterval(this._timer);
-    }
-
-    start(){
-        this.render(this._template);
-        this._timer = setInterval(this.render, 1000, this._template);
-    }
-
-}
-
-var clock = new Clock({template: 'h:m:s'});
-clock.start();
-
-
+const myPromise = new Promise((resolve, reject)=> {
+    setTimeout(() => {
+        resolve('Timer complit');
+    }, 1000);
+})
+    .then((Text)=> {throw new Error('fail')})
+    .catch(err => console.log(err))
+    .then(() => console.log('Does that ea'));
