@@ -2,20 +2,23 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import YoutubeUI from './Tugas/Tugas-12/App';
+import YoutubeUI from './Tugas/Tugas12/App'
+import AboutScreen from './Tugas/Tugas13/AboutMe';
+import LoginScreen from './Tugas/Tugas13/LoginScreen';
+import Register from './Tugas/Tugas13/Register';
 
 export default function App() {
   return (
-    <YoutubeUI/>
     
-  
+    <Register/>
+    
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#e3f2fd',
     alignItems: 'center',
     justifyContent: 'center',
   },
